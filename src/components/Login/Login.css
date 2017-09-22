@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800');
+
+ .Background {
+  text-align: center;
+  background-image: linear-gradient(99deg, #FF70A5, #ff9770, #ffd670, #e9ff70);
+  height: 900px;
+  width: 1675px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+ };
+
+  .App {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+.splash-screen {
+  /* background-image: linear-gradient(110deg, #ff7a6e, #ff9770, #FFCE70 99%); */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25), 0 2px 2px 0 rgba(0, 0, 0, 0.26);
+  height: 350px;
+  width: 420px;
+  background-image: linear-gradient(128deg, rgba(64, 61, 57, 0.1), rgba(255, 255, 255, 0.2));
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+div.logo-main {
+  height: 120px;
+  content: url('../../logo.png');
+  display: block;
+  margin:auto;
+  vertical-align: center;
+  margin: 0px;
+}
+
+.login {
+  border-radius: 3px;
+  /* background-image: radial-gradient(circle at 50%-46%, #737373, #403d39); */
+  background-color: #403D39;
+  color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  height: 35px;
+  width: 225px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  -moz-transition: all .1s ease-in;
+  -o-transition: all .1s ease-in;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.helo {
+  font-size: 72px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background-color:#ff9770; 
+}
+
+h1 {
+  margin: 10px;
+}
