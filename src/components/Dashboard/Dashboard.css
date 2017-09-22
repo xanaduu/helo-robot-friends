@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800');
+
+ul {
+  list-style-type: none;
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(99deg, #FF786e, #ff9770);
+  vertical-align: center;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ff9770;
+}
+
+li .Home-Icon {
+  background-image: url("../../home.png");
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+  
+}
+
+li .Search-Icon {
+  background-image: url("../../search.png");
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+
+  margin: 5px;
+  
+}
+
+.Helo {
+  font-size: 20px;
+}
+
+.Background-Dash {
+  width:
+}

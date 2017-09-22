@@ -4,7 +4,7 @@
   text-align: center;
   background-image: linear-gradient(99deg, #FF70A5, #ff9770, #ffd670, #e9ff70);
   height: 900px;
-  width: 1675px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
