@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import './Dashboard.css';
-// import home from '../../home.png'
-=======
 import dashboard from './Dashboard.css';
 import home from '../../home.png';
 import friends from '../../robots';
->>>>>>> b4268066b3e70f03dcc5e2d507f8fe8d640970c6
+import { connect } from 'react-redux';
+import { updateFirstName, updateLastName, updateGender, updateHairColor, updateEyeColor, updateHobby, updateBirthDay, updateBirthMonth, updateBirthYear } from '../../ducks/reducer';
+
 
 class Dashboard extends Component {
   constructor() {
@@ -26,7 +24,9 @@ class Dashboard extends Component {
   }
   
   render() {
+    console.log(friends);
     const { friends, currentPage, friendsPerPage } = this.state;
+    const { firstName, lastName, gender, birthDay, birthMonth, birthYear } = this.props;
     const indexOfLastFriend = currentPage * friendsPerPage;
     const indexOfFirstFriend = indexOfLastFriend - friendsPerPage;
     const currentFriends = friends.slice(indexOfFirstFriend, indexOfLastFriend);
@@ -70,4 +70,18 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+function mapStateToProps( state ) {
+  return {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      gender: state.gender,
+      hairColor: state.hairColor,
+      eyeColor: state.eyeColor,
+      hobby: state.hobby,
+      birthDay: state.birthDay,
+      birthMonth: state.birthMonth,
+      birthYear: state.birthYear
+  }
+};
+
+export default connect(mapStateToProps, { updateFirstName, updateLastName, updateGender, updateHairColor, updateEyeColor, updateHobby, updateBirthDay, updateBirthMonth, updateBirthYear })(Dashboard);

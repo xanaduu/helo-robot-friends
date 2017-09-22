@@ -9,12 +9,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <HashRouter>
-          <div> 
-            <Route exact path='/' component={ Login } />
-            <Route path='/dashboard' component={ Dashboard } />
-          </div>
-        </HashRouter>
+          <HashRouter>
+            <div> 
+              <Route exact path='/' component={ Login } />
+              <Route path='/dashboard' component={ Dashboard } />
+            </div>
+          </HashRouter>
       </div>
     );
   }

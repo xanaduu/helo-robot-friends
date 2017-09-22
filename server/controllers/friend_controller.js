@@ -18,7 +18,7 @@ module.exports = {
             const selectedFriend = friend.find( friend => friend.id == id);
             friends.push(selectedFriend);
         }
-        res.status(200).send( req.session.user + ' has been added a your friend!' );
+        res.status(200).send( req.session.user + ' has added a friend!' );
     },
 
     delete: (req, res, next) => {
