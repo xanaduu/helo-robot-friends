@@ -1,3 +1,8 @@
+-- create a new user!
+-- method will be called upon login/registration
+-- hair_color, eye_color, hobby, gender all randomized and input
+-- we are only asking new users for first_name, last_name, birth_day birth_month birth_year
+
 INSERT INTO HeloUsers 
 (first_name, last_name, gender, hair_color, eye_color, hobby, birth_day, birth_month, birth_year)
 VALUES 
