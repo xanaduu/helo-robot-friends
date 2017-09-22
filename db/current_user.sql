@@ -1,3 +1,3 @@
 SELECT *
 FROM HeloUsers
-WHERE id = $1;
+WHERE auth_id = $1;

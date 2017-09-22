@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import dashboard from './Dashboard.css';
-import home from '../../home.png'
+import './Dashboard.css';
+// import home from '../../home.png'
 
 class Dashboard extends Component {
   render() {
