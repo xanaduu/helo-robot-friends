@@ -1,3 +1,4 @@
+// packages
 require('dotenv').config();
 const express = require('express'),
     bodyParser = require('body-parser'),
@@ -5,6 +6,9 @@ const express = require('express'),
     session = require('express-session'),
     passport = require('passport'),
     Auth0Strategy = require('passport-auth0');
+
+// controller(s)
+const friend_controller = require('./controllers/friend_controller');
 
 const app = express();
 app.use(session({
