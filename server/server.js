@@ -16,10 +16,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// connects to our database
 massive(process.env.CONNECTION_STRING)
     .then( db => {
         app.set('db', db);
-    })
+    });
 
 passport.use( new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
@@ -38,30 +39,39 @@ passport.serializeUser(function(userId, done) {
 })
 
 passport.deserializeUser(function(userId, done) {
-    app.get('db').current_user([userId]).then ( user => {
-        done(null, user[0]);
-    })
+    // app.get('db').current_user([userId]).then ( user => {
+        done(null, user[0]
+        // );}
+  )
 })
 
-app.get('/auth', passport.authenticate('auth0'));
+app.get('/auth/login', passport.authenticate('auth0'));
 
+// invokes authenticate method 
+// redirects 
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/private',
-    failureRedirect: '/auth'
+    successRedirect: 'http://localhost:3000/#/dashboard',
+    failureRedirect: '/auth/login'
 }))
 
-app.get('/auth/user', (req, res, next) => {
+// checks for user object on session
+app.get('/auth/authenticated', (req, res, next) => {
     if (!req.user) {
-    return res.status(404).send('User not found');
+    return res.status(403).send('User not found');
     } else {
         return res.status(200).send(req.user);
     }
 })
 
+// destroys current session
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, 'http://localhost:3000/')
-})
+    res.redirect(200, 'http://localhost:3000/')
+});
+
+// friend endpoints
+// list all friends of the logged in user
+// app.get()
 
 const PORT = 3030;
 app.listen(PORT, () => console.log('Listening on port: ', PORT))
