@@ -1,4 +1,4 @@
-const robots = require('../models/robots');
+const friends = require('../models/robots');
 let id = 1;
 
 // equivalent to managing our friends like a cart of items ... 
@@ -6,6 +6,10 @@ let id = 1;
 // manipulate the array of 'friends' (from robots) associated with each req/res
 
 module.exports = {
+    read: (req, res, next) => {
+        res.status(200).send( friends );
+    },
+    
     add: (req, res, next) => {
         const { id } = req.query.id;
         const { friends } = req.session.user;

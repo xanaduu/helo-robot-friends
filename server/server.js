@@ -9,6 +9,7 @@ const express = require('express'),
 
 // controller(s)
 const friend_controller = require('./controllers/friend_controller');
+const search_controller = require('./controllers/search_controller');
 
 const app = express();
 app.use(session({
@@ -71,8 +72,9 @@ app.get('/auth/logout', (req, res) => {
 });
 
 // friend endpoints
-// list all friends of the logged in user
-// app.get()
+app.get('/api/friend/list', friend_controller.read); // list all friends of the logged in user
+app.post('/api/friend/list', friend_controller.add);
+app.post('/api/friend/remove', friend_controller.delete);
 
 const PORT = 3030;
-app.listen(PORT, () => console.log('Listening on port: ', PORT))
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
