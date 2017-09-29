@@ -1,3 +1,4 @@
 # Simulation #3
 ## Vincent, Kylie, Rachel ...
-### getting shit done
+
+- See src > notes.js for more
